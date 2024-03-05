@@ -59,6 +59,32 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         assertEquals(1360, EmpleadoBR.calculaSalarioBruto(TipoEmpleado.venedor, 2000, 8));
      }
 
+     @Test
+     public void calculaSalarioBruto2(){
+         assertEquals(1260, EmpleadoBR.calculaSalarioBruto(TipoEmpleado.venedor, 1500, 3));
+     }
+
+     @Test
+     public void calculaSalarioBruto3(){
+         assertEquals(1110, EmpleadoBR.calculaSalarioBruto(TipoEmpleado.venedor, 1499.99f, 0.5f), 0.0010f);
+     }
+
+     @Test
+     public void calculaSalarioBruto4(){
+         assertEquals(1760, EmpleadoBR.calculaSalarioBruto(TipoEmpleado.encaarregat, 1250, 8));
+     }
+
+     @Test
+     public void calculaSalarioBruto5(){
+         assertEquals(1600, EmpleadoBR.calculaSalarioBruto(TipoEmpleado.encaarregat, 1000, 0));
+     }
+
+     @Test
+     public void calculaSalarioBruto6(){
+         assertEquals(1560, EmpleadoBR.calculaSalarioBruto(TipoEmpleado.encaarregat, 999.99f, 3), 0.0010f);
+     }
+
+
 
 
 
