@@ -14,6 +14,8 @@ public class EmpleadoBR {
             salarioBase = 1500;
         }
 
+
+
         float prima;
         if (ventasMes >= 1500) {
             prima = 200;
@@ -23,14 +25,20 @@ public class EmpleadoBR {
             prima = 0;
         }
 
-        return salarioBase + prima + (horasExtra * 20);
+        if(horasExtra > 0){
+            salarioBase += (horasExtra * 20);
+        }
+
+        return salarioBase + prima ;
     }
 
     public static float calculaSalarioNeto(float salarioBruto) {
         if (salarioBruto < 0) {
             return -1;
         }
-
+        if(salarioBruto < 1000){
+            return salarioBruto;
+        }
         float retencion;
         if (salarioBruto < 1500) {
             retencion = 0.16f;
