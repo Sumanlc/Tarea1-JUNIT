@@ -1,0 +1,43 @@
+package es.iesmz;
+
+public class EmpleadoBR {
+
+    public static float calculaSalarioBruto(TipoEmpleado tipo, float ventasMes, float horasExtra) {
+        if (tipo == null || ventasMes < 0 || horasExtra < 0) {
+            return -1;
+        }
+
+        float salarioBase;
+        if (tipo == TipoEmpleado.venedor) {
+            salarioBase = 1000;
+        } else {
+            salarioBase = 1500;
+        }
+
+        float prima;
+        if (ventasMes >= 1500) {
+            prima = 200;
+        } else if (ventasMes >= 1000) {
+            prima = 100;
+        } else {
+            prima = 0;
+        }
+
+        return salarioBase + prima + (horasExtra * 20);
+    }
+
+    public static float calculaSalarioNeto(float salarioBruto) {
+        if (salarioBruto < 0) {
+            return -1;
+        }
+
+        float retencion;
+        if (salarioBruto < 1500) {
+            retencion = 0.16f;
+        } else {
+            retencion = 0.18f;
+        }
+
+        return salarioBruto * (1 - retencion);
+    }
+}
